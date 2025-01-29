@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dinosaur Facts</h1>
+        <button id="newFactButton">Show Random Fact</button>
+        <div id="factDisplay" class="fact-display">
+            <h2 id="factTitle"></h2>
+            <p id="factDescription"></p>
+        </div>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Diverse Species",
+                "description": "Dinosaurs were a diverse group of reptiles that existed during the Mesozoic Era, which is divided into three periods: Triassic, Jurassic, and Cretaceous."
+            },
+            {
+                "fact": "Bird Ancestors",
+                "description": "Birds are considered the closest living relatives of dinosaurs, specifically theropod dinosaurs like the Velociraptor."
+            },
+            {
+                "fact": "Size Variation",
+                "description": "Dinosaurs varied greatly in size, from the tiny, chicken-sized Compsognathus to the massive Argentinosaurus, which could reach lengths of over 100 feet."
+            },
+            {
+                "fact": "Extinction Event",
+                "description": "Dinosaurs went extinct about 66 million years ago, likely due to a massive asteroid impact near the Yucatan Peninsula, which caused drastic climate changes."
+            },
+            {
+                "fact": "Fossil Discoveries",
+                "description": "Dinosaur fossils have been found on every continent, including Antarctica, indicating they were widespread across the globe."
+            },
+            {
+                "fact": "Herbivores and Carnivores",
+                "description": "Dinosaurs were both herbivores and carnivores. Herbivorous dinosaurs like Triceratops had specialized teeth for grinding plants, while carnivorous dinosaurs like Tyrannosaurus rex had sharp teeth for tearing flesh."
+            },
+            {
+                "fact": "Egg Layers",
+                "description": "Dinosaurs laid eggs, and some species, like the Oviraptor, are believed to have cared for their young, similar to modern birds."
+            },
+            {
+                "fact": "Feathered Dinosaurs",
+                "description": "Many theropod dinosaurs had feathers, which were likely used for insulation, display, and possibly flight in some species."
+            },
+            {
+                "fact": "Long Lifespan",
+                "description": "Some dinosaurs, like the long-necked sauropods, may have lived for several decades, possibly up to 100 years."
+            },
+            {
+                "fact": "Name Origin",
+                "description": "The term 'dinosaur' was coined by Sir Richard Owen in 1842 and means 'terrible lizard,' derived from the Greek words 'deinos' (terrible) and 'sauros' (lizard)."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', displayRandomFact);
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('factTitle').textContent = fact.fact;
+            document.getElementById('factDescription').textContent = fact.description;
+        }
+
+        // Display a fact initially
+        displayRandomFact();
+    </script>
+</body>
+</html>
